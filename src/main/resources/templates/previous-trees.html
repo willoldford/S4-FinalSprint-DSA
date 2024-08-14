@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Trees</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        .record pre {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Previous Trees</h1>
+    <div th:each="record : ${records}" class="record">
+        <h2>Tree Record</h2>
+        <p><strong>Input Numbers:</strong> <span th:text="${record.inputNumbers}"></span></p>
+        <pre th:text="${record.treeStructure}"></pre>
+    </div>
+    <a href="/enter-numbers" class="back-button">Back</a>
+</div>
+</body>
+</html>
